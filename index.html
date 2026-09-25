@@ -1,0 +1,1315 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aadharshila | House Construction & Custom Homes</title>
+    <meta name="description" content="Aadharshila - House construction from Ultra Economy to Luxury and Boutique custom homes. Transparent built-up area pricing and complete construction solutions.">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #a65f2b;
+            --primary-dark: #7e421c;
+            --dark: #171717;
+            --cream: #f7f3ed;
+            --gold: #c89b5b;
+            --light: #faf9f6;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Playfair Display", serif;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,.96);
+            box-shadow: 0 2px 20px rgba(0,0,0,.06);
+        }
+
+        .navbar-brand {
+            font-family: "Playfair Display", serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .navbar-brand span {
+            display: block;
+            font-family: "DM Sans", sans-serif;
+            font-size: .62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #777;
+            margin-top: -5px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #333 !important;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            border: 0;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: #fff;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.35)),
+                url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,.13);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: .85rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.7rem);
+            line-height: 1.02;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #e2b878;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            color: rgba(255,255,255,.88);
+        }
+
+        .hero-price {
+            margin: 30px 0;
+            padding: 18px 22px;
+            border-left: 4px solid var(--gold);
+            background: rgba(0,0,0,.3);
+            display: inline-block;
+        }
+
+        .hero-price strong {
+            display: block;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: .75rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            margin-bottom: 18px;
+        }
+
+        .section-subtitle {
+            color: #707070;
+            max-width: 700px;
+        }
+
+        .package-card {
+            height: 100%;
+            border: 1px solid #e8e3dc;
+            border-radius: 18px;
+            padding: 30px;
+            background: #fff;
+            transition: .25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 45px rgba(0,0,0,.09);
+        }
+
+        .package-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 15px 40px rgba(166,95,43,.13);
+        }
+
+        .package-card.featured::before {
+            content: "POPULAR ENTRY PACKAGE";
+            position: absolute;
+            top: 18px;
+            right: -42px;
+            transform: rotate(45deg);
+            background: var(--primary);
+            color: #fff;
+            font-size: .62rem;
+            font-weight: 800;
+            padding: 7px 50px;
+        }
+
+        .package-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            background: var(--cream);
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .package-price small {
+            font-size: .85rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .package-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .package-list li {
+            margin: 13px 0;
+            color: #555;
+        }
+
+        .package-list i {
+            color: #39845a;
+            margin-right: 8px;
+        }
+
+        .calculator {
+            background: var(--dark);
+            color: white;
+            border-radius: 25px;
+            padding: 45px;
+        }
+
+        .calculator .form-label {
+            color: #ddd;
+            font-weight: 600;
+        }
+
+        .calculator .form-control,
+        .calculator .form-select {
+            background: #252525;
+            border: 1px solid #454545;
+            color: #fff;
+            padding: 13px;
+        }
+
+        .calculator .form-control:focus,
+        .calculator .form-select:focus {
+            border-color: var(--gold);
+            box-shadow: none;
+        }
+
+        .estimate-result {
+            background: linear-gradient(135deg, #a65f2b, #7e421c);
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .estimate-result .amount {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+        }
+
+        .example-box {
+            background: var(--cream);
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .feature-box {
+            padding: 30px;
+            border-radius: 16px;
+            background: #fff;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+
+        .feature-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .custom-section {
+            background:
+                linear-gradient(90deg, rgba(20,20,20,.9), rgba(20,20,20,.5)),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+            color: white;
+        }
+
+        .custom-section .section-subtitle {
+            color: #ddd;
+        }
+
+        .faq .accordion-item {
+            border: 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq .accordion-button {
+            font-weight: 700;
+            padding: 22px 0;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .faq .accordion-body {
+            padding: 0 0 22px;
+            color: #666;
+        }
+
+        footer {
+            background: #111;
+            color: #bbb;
+            padding: 65px 0 25px;
+        }
+
+        footer h4 {
+            color: #fff;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-contact a {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,.2);
+        }
+
+        .call-btn {
+            background: #222;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+        }
+
+        .disclaimer {
+            font-size: .78rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 65px 0;
+            }
+
+            .calculator {
+                padding: 25px;
+            }
+
+            .hero {
+                min-height: 82vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container py-2">
+        <a class="navbar-brand" href="#">
+            Aadharshila
+            <span>Build • Live • Belong</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#calculator">Estimator</a></li>
+                <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                <li class="nav-item"><a class="nav-link" href="#custom">Custom Work</a></li>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-primary-custom" href="tel:+918210779362">
+                        <i class="bi bi-telephone"></i> Call Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="bi bi-house-heart"></i>
+                Complete House Construction
+            </div>
+
+            <h1>
+                Your Home.<br>
+                Built with <span>Aadharshila.</span>
+            </h1>
+
+            <p>
+                From essential economy homes to luxury residences and
+                completely custom builds — we bring design, materials,
+                workmanship and construction together.
+            </p>
+
+            <div class="hero-price">
+                <small>ULTRA ECONOMY</small>
+                <strong>₹600 / sq ft</strong>
+                <span>Calculated on total built-up area</span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3">
+                <a href="#calculator" class="btn btn-primary-custom btn-lg">
+                    Calculate Your Home
+                </a>
+
+                <a href="https://wa.me/918210779362"
+                   class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-whatsapp"></i> WhatsApp Us
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PACKAGES -->
+<section id="packages">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <div class="section-label">Construction Packages</div>
+            <h2 class="section-title">Choose Your Level of Finish</h2>
+            <p class="section-subtitle mx-auto">
+                Transparent per-square-foot pricing based on
+                total built-up area.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ULTRA ECONOMY -->
+            <div class="col-lg-4">
+                <div class="package-card featured">
+
+                    <div class="package-icon">
+                        <i class="bi bi-house"></i>
+                    </div>
+
+                    <h3>Ultra Economy</h3>
+
+                    <div class="package-price">
+                        ₹600 <small>/ sq ft</small>
+                    </div>
+
+                    <p class="text-muted">
+                        Practical construction focused on essential
+                        functionality and cost efficiency.
+                    </p>
+
+                    <ul class="package-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Basic structural construction</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Standard materials</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Essential electrical work</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Essential plumbing</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Basic flooring & finishes</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Labour included as per package</li>
+                    </ul>
+
+                    <a href="#calculator" class="btn btn-primary-custom w-100">
+                        Get Estimate
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- ECONOMY -->
+            <div class="col-lg-4">
+                <div class="package-card">
+
+                    <div class="package-icon">
+                        <i class="bi bi-house-check"></i>
+                    </div>
+
+                    <h3>Economy</h3>
+
+                    <div class="package-price">
+                        ₹800 <small>/ sq ft</small>
+                    </div>
+
+                    <p class="text-muted">
+                        Improved materials and finishes for comfortable
+                        everyday living.
+                    </p>
+
+                    <ul class="package-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Enhanced flooring</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Better fixtures</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Improved doors & windows</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Enhanced electrical package</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Better bathroom fittings</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Labour & materials</li>
+                    </ul>
+
+                    <a href="#calculator" class="btn btn-outline-dark w-100">
+                        Get Estimate
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- STANDARD -->
+            <div class="col-lg-4">
+                <div class="package-card">
+
+                    <div class="package-icon">
+                        <i class="bi bi-buildings"></i>
+                    </div>
+
+                    <h3>Standard</h3>
+
+                    <div class="package-price">
+                        ₹1,100 <small>/ sq ft</small>
+                    </div>
+
+                    <p class="text-muted">
+                        A balanced package combining design,
+                        durability and upgraded finishes.
+                    </p>
+
+                    <ul class="package-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Premium-grade selections</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Better sanitary fittings</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Enhanced kitchen</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Improved lighting</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Contemporary finishes</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Complete construction</li>
+                    </ul>
+
+                    <a href="#calculator" class="btn btn-outline-dark w-100">
+                        Get Estimate
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-6">
+                <div class="package-card">
+
+                    <div class="package-icon">
+                        <i class="bi bi-stars"></i>
+                    </div>
+
+                    <h3>Luxury</h3>
+
+                    <div class="package-price">
+                        ₹1,500 <small>/ sq ft</small>
+                    </div>
+
+                    <p class="text-muted">
+                        Premium homes with upgraded materials,
+                        finishes, fixtures and design.
+                    </p>
+
+                    <a href="#contact" class="btn btn-outline-dark">
+                        Discuss Your Home
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="package-card">
+
+                    <div class="package-icon">
+                        <i class="bi bi-gem"></i>
+                    </div>
+
+                    <h3>Boutique / Custom</h3>
+
+                    <div class="package-price">
+                        Custom
+                    </div>
+
+                    <p class="text-muted">
+                        Bespoke residences, architectural concepts,
+                        unusual layouts and specialized requirements.
+                    </p>
+
+                    <a href="#custom" class="btn btn-primary-custom">
+                        Explore Custom Work
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CALCULATOR -->
+<section id="calculator" style="background:#f7f3ed;">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <div class="section-label">Instant Estimate</div>
+            <h2 class="section-title">Calculate Your Construction Cost</h2>
+            <p class="section-subtitle mx-auto">
+                Enter the <strong>total built-up area</strong>.
+                Plot size is not used for this calculation.
+            </p>
+        </div>
+
+        <div class="calculator">
+
+            <div class="row g-4 align-items-stretch">
+
+                <div class="col-lg-7">
+
+                    <h3 class="mb-4">Your Requirements</h3>
+
+                    <div class="mb-4">
+                        <label class="form-label">Construction Package</label>
+
+                        <select id="packageSelect" class="form-select">
+                            <option value="600">Ultra Economy — ₹600/sq ft</option>
+                            <option value="800">Economy — ₹800/sq ft</option>
+                            <option value="1100">Standard — ₹1,100/sq ft</option>
+                            <option value="1500">Luxury — ₹1,500/sq ft</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            Total Built-up Area (sq ft)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="areaInput"
+                            class="form-control form-control-lg"
+                            value="1200"
+                            min="1"
+                            placeholder="Example: 1200"
+                        >
+
+                        <div class="form-text text-secondary mt-2">
+                            Example: Ground floor 600 sq ft + First floor
+                            600 sq ft = 1,200 sq ft total built-up area.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Number of Floors</label>
+
+                        <select id="floorSelect" class="form-select">
+                            <option value="1">Single Floor</option>
+                            <option value="2" selected>G+1</option>
+                            <option value="3">G+2</option>
+                            <option value="4">G+3</option>
+                        </select>
+
+                        <div class="form-text text-secondary mt-2">
+                            This is for illustration only. The calculation
+                            uses the total built-up area entered above.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <div class="estimate-result">
+
+                        <small class="text-uppercase">
+                            Estimated Construction Cost
+                        </small>
+
+                        <div class="amount" id="result">
+                            ₹7,20,000
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Built-up area</span>
+                            <strong id="areaResult">1,200 sq ft</strong>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <span>Rate</span>
+                            <strong id="rateResult">₹600/sq ft</strong>
+                        </div>
+
+                        <p class="mt-4 mb-0 small">
+                            This is an indicative estimate. Final pricing
+                            depends on structural design, specifications,
+                            site conditions, approvals and the agreed
+                            scope of work.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXAMPLE -->
+        <div class="row g-4 mt-5">
+
+            <div class="col-lg-6">
+                <div class="example-box">
+
+                    <div class="section-label">Example</div>
+
+                    <h3>G+1 Home — 1,200 sq ft Built-up</h3>
+
+                    <p class="text-muted">
+                        Suppose the customer has:
+                    </p>
+
+                    <ul>
+                        <li>Ground floor: 600 sq ft</li>
+                        <li>First floor: 600 sq ft</li>
+                        <li>Total built-up area: <strong>1,200 sq ft</strong></li>
+                    </ul>
+
+                    <h4 class="mt-4">
+                        1,200 × ₹600 =
+                        <span style="color:#a65f2b;">₹7.20 lakh</span>
+                    </h4>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="example-box">
+
+                    <div class="section-label">Important</div>
+
+                    <h3>Plot Size ≠ Built-up Area</h3>
+
+                    <p class="text-muted">
+                        Construction pricing is calculated from the
+                        agreed built-up area, not automatically from
+                        the plot area.
+                    </p>
+
+                    <p class="mb-0">
+                        A 1,200 sq ft plot may have a different permissible
+                        built-up area depending on setbacks, regulations,
+                        design and site conditions.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- WHAT WE BUILD -->
+<section>
+    <div class="container">
+
+        <div class="row align-items-center mb-5">
+
+            <div class="col-lg-6">
+                <div class="section-label">Complete Construction</div>
+                <h2 class="section-title">
+                    From Foundation to Handover
+                </h2>
+            </div>
+
+            <div class="col-lg-6">
+                <p class="section-subtitle">
+                    Aadharshila is designed around a simple idea:
+                    make home construction easier to understand,
+                    price and manage.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-bricks"></i>
+                    <h4>Structure</h4>
+                    <p class="text-muted mb-0">
+                        Foundation, columns, beams, slabs and
+                        masonry according to the approved structural design.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-lightning-charge"></i>
+                    <h4>Electrical</h4>
+                    <p class="text-muted mb-0">
+                        Electrical wiring, switches, distribution
+                        and essential electrical installations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-droplet"></i>
+                    <h4>Plumbing</h4>
+                    <p class="text-muted mb-0">
+                        Water supply, drainage and bathroom plumbing
+                        according to the selected package.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    <h4>Flooring</h4>
+                    <p class="text-muted mb-0">
+                        Flooring and finishing options selected
+                        according to the construction package.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-door-open"></i>
+                    <h4>Doors & Windows</h4>
+                    <p class="text-muted mb-0">
+                        Practical door and window solutions with
+                        package-specific material selections.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="bi bi-palette"></i>
+                    <h4>Finishing</h4>
+                    <p class="text-muted mb-0">
+                        Plastering, painting and other finishing
+                        work according to the selected package.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROCESS -->
+<section id="process" style="background:#f7f3ed;">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <div class="section-label">Our Process</div>
+            <h2 class="section-title">A Clearer Way to Build</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="process-number">01</div>
+                <h4>Consultation</h4>
+                <p class="text-muted">
+                    Understand your plot, requirements, budget
+                    and preferred construction package.
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="process-number">02</div>
+                <h4>Design & Estimate</h4>
+                <p class="text-muted">
+                    Develop the proposed design, built-up area
+                    and detailed scope.
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="process-number">03</div>
+                <h4>Construction</h4>
+                <p class="text-muted">
+                    Execute the agreed construction work with
+                    coordinated labour and materials.
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="process-number">04</div>
+                <h4>Handover</h4>
+                <p class="text-muted">
+                    Complete finishing and hand over your
+                    finished home.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CUSTOM -->
+<section id="custom" class="custom-section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-7">
+
+                <div class="section-label" style="color:#e2b878;">
+                    Custom Work
+                </div>
+
+                <h2 class="section-title">
+                    Have a Different Vision?
+                </h2>
+
+                <p class="section-subtitle">
+                    Not every home fits into a standard package.
+                    We can work with customers looking for custom
+                    floor plans, special elevations, premium finishes,
+                    unique spaces or completely bespoke homes.
+                </p>
+
+                <a href="https://wa.me/918210779362"
+                   class="btn btn-primary-custom btn-lg mt-3">
+                    <i class="bi bi-whatsapp"></i>
+                    Discuss Your Custom Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+                        Is ₹600 calculated on plot area?
+                    </button>
+                </h2>
+
+                <div id="faq1"
+                     class="accordion-collapse collapse show"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        No. The ₹600/sq-ft rate is based on the
+                        agreed total built-up area.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                        Can I build a G+1 house?
+                    </button>
+                </h2>
+
+                <div id="faq2"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, subject to applicable building regulations,
+                        structural requirements and the permitted
+                        built-up area of the site.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                        Does the package include labour?
+                    </button>
+                </h2>
+
+                <div id="faq3"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Labour is included according to the agreed
+                        scope of the selected construction package.
+                        The final quotation should specify inclusions
+                        and exclusions clearly.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq4">
+                        Can I request custom work?
+                    </button>
+                </h2>
+
+                <div id="faq4"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. Custom floor plans, elevations, finishes,
+                        room requirements and other special work can
+                        be discussed separately.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" style="background:#f7f3ed;">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <div class="section-label">Start Building</div>
+
+                <h2 class="section-title">
+                    Let's Build Your Aadharshila.
+                </h2>
+
+                <p class="section-subtitle">
+                    Tell us your built-up area, number of floors,
+                    location and requirements. We'll help you
+                    understand the appropriate construction package.
+                </p>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="p-4 bg-white rounded-4 shadow-sm">
+
+                    <h4>Talk to Aadharshila</h4>
+
+                    <p class="text-muted">
+                        Construction enquiries and custom work
+                    </p>
+
+                    <a href="tel:+918210779362"
+                       class="btn btn-primary-custom w-100 mb-3">
+                        <i class="bi bi-telephone"></i>
+                        +91 82107 79362
+                    </a>
+
+                    <a href="https://wa.me/918210779362"
+                       class="btn btn-outline-success w-100">
+                        <i class="bi bi-whatsapp"></i>
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <h4>Aadharshila</h4>
+
+                <p>
+                    House construction from essential economy
+                    homes to premium and completely custom residences.
+                </p>
+
+                <p>
+                    <strong>₹600/sq ft Ultra Economy</strong>
+                    <br>
+                    Based on total built-up area.
+                </p>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <h5 class="text-white">Explore</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#packages">Packages</a></li>
+                    <li class="mb-2"><a href="#calculator">Estimator</a></li>
+                    <li class="mb-2"><a href="#process">Process</a></li>
+                    <li class="mb-2"><a href="#custom">Custom Work</a></li>
+                </ul>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <h5 class="text-white">Contact</h5>
+
+                <p>
+                    <i class="bi bi-telephone"></i>
+                    +91 82107 79362
+                </p>
+
+                <p>
+                    <i class="bi bi-whatsapp"></i>
+                    WhatsApp available
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr class="border-secondary mt-5">
+
+        <div class="d-flex flex-column flex-md-row
+                    justify-content-between gap-2">
+
+            <small>
+                © 2026 Aadharshila. All rights reserved.
+            </small>
+
+            <small class="disclaimer">
+                Prices shown are indicative and subject to final scope,
+                specifications, site conditions and applicable taxes.
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING CONTACT -->
+<div class="floating-contact">
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/918210779362"
+       aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <a class="call-btn"
+       href="tel:+918210779362"
+       aria-label="Call">
+        <i class="bi bi-telephone"></i>
+    </a>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Calculator -->
+<script>
+
+    const packageSelect = document.getElementById("packageSelect");
+    const areaInput = document.getElementById("areaInput");
+
+    const result = document.getElementById("result");
+    const areaResult = document.getElementById("areaResult");
+    const rateResult = document.getElementById("rateResult");
+
+    function calculateCost() {
+
+        const rate = Number(packageSelect.value);
+        const area = Number(areaInput.value) || 0;
+
+        const total = rate * area;
+
+        result.textContent = "₹" + total.toLocaleString("en-IN");
+
+        areaResult.textContent =
+            area.toLocaleString("en-IN") + " sq ft";
+
+        rateResult.textContent =
+            "₹" + rate.toLocaleString("en-IN") + "/sq ft";
+    }
+
+    packageSelect.addEventListener("change", calculateCost);
+    areaInput.addEventListener("input", calculateCost);
+
+    calculateCost();
+
+</script>
+
+</body>
+</html>
+```
